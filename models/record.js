@@ -19,12 +19,4 @@ const recordSchema = new Schema({
   }
 })
 
-const categorySchema = new Schema({
-  name: {
-    type: String,
-    required: true
-  }
-})
-
 module.exports = mongoose.model('Record', recordSchema)
-// module.exports = mongoose.model('Category', categorySchema)
