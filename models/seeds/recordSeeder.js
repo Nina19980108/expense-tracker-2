@@ -12,7 +12,7 @@ db.once('open', () => {
     Record.create({
       name: 'name' + i,
       category: 'category' + i,
-      date: '2020/05/13',
+      date: '2020-05-' + i,
       amount: 30
     })
   }
