@@ -59,6 +59,17 @@ app.get('/edit/:id', (req, res) => {
     .catch(error => console.error(error))
 })
 
+app.post('/edit/:id', (req, res) => {
+  const id = req.params.id
+  return Record.findById(id)
+    .then(record => {
+      record = Object.assign(record, req.body)
+      return record.save()
+    })
+    .then(() => res.redirect('/'))
+    .catch(error => console.error(error))
+})
+
 app.listen(port, () => {
   console.log(`app is listening on http://localhost:${port}`)
 })
