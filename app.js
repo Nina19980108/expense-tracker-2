@@ -35,6 +35,7 @@ app.get('/', (req, res) => {
 
   Record.find()
     .lean()
+    .sort({ _id: 'asc' })
     .then(record => res.render('index', { record }))
     .catch(error => console.error(error))
 })
