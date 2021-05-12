@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars')
 const mongoose = require('mongoose')
 const record = require('./models/record')
 const Record = require('./models/record')
+const bodyParser = require('body-parser')
 
 const port = 3000
 const app = express()
@@ -18,6 +19,8 @@ db.once('open', () => {
 
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs' }))
 app.set('view engine', 'hbs')
+
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
   // let totalAmount = 0
@@ -38,6 +41,13 @@ app.get('/', (req, res) => {
 
 app.get('/new', (req, res) => {
   res.render('new')
+})
+
+app.post('/new', (req, res) => {
+  const newRecord = req.body
+  return Record.create(newRecord)
+    .then(() => res.redirect('/'))
+    .catch(error => console.error(error))
 })
 
 app.listen(port, () => {
