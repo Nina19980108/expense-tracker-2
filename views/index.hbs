@@ -27,7 +27,7 @@
       {{#each record }}
       <li class="list-group-item d-flex justify-content-between align-items-center">
         <div class="d-flex">
-          <i class="fas fa-utensils m-auto fs-4 px-3" style="color: rgb(66, 90, 126);"></i>
+          <i class="fas {{ this.category }} m-auto fs-4 px-3" style="color: rgb(66, 90, 126);"></i>
           <div class="ms-3">
             <p class="m-0 p-0 fs-4">{{this.name}}</p>
             <p class="m-0 p-0 fw-lighter">{{this.date}}</p>
@@ -43,32 +43,8 @@
             </form>
           </div>
         </div>
-
       </li>
       {{/each}}
-
-      </li>
-
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex">
-          <i class="fas fa-utensils m-auto fs-4 px-3" style="color: rgb(66, 90, 126);"></i>
-          <div class="ms-3">
-            <p class="m-0 p-0 fs-4">午餐</p>
-            <p class="m-0 p-0 fw-lighter">2019/04/23</p>
-          </div>
-        </div>
-
-        <div class="d-flex align-items-center">
-          <p class="m-0 p-0 fs-5 fw-light pe-4">60</p>
-          <div>
-            <a href="#" style="color: rgb(96, 96, 96);" class="m-0 p-0">修改</a>
-            <form action="#" method="post">
-              <button type="submit" class="btn m-0 p-0" style="color: rgb(96, 96, 96);">刪除</button>
-            </form>
-          </div>
-        </div>
-
-      </li>
 
     </ul>
   </div>
