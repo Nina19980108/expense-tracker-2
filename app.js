@@ -20,20 +20,24 @@ app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs' }))
 app.set('view engine', 'hbs')
 
 app.get('/', (req, res) => {
-  let totalAmount = 0
-  Record.find()
-    .lean()
-    .then(record => {
-      record.forEach(record => {
-        totalAmount += record.amount
-      })
-    })
-    .catch(error => console.error(error))
+  // let totalAmount = 0
+  // Record.find()
+  //   .lean()
+  //   .then(record => {
+  //     record.forEach(record => {
+  //       totalAmount += record.amount
+  //     })
+  //   })
+  //   .catch(error => console.error(error))
 
   Record.find()
     .lean()
-    .then(record => res.render('index', { record, totalAmount }))
+    .then(record => res.render('index', { record }))
     .catch(error => console.error(error))
+})
+
+app.get('/new', (req, res) => {
+  res.render('new')
 })
 
 app.listen(port, () => {
