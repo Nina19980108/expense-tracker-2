@@ -4,14 +4,14 @@
     <button class="btn btn-outline-secondary btn-lg" type="submit">新增支出</button>
   </form>
 
-  <form action="/" method="get" class="d-flex">
+  <form action="/category" method="get" class="d-flex">
     <select class="form-select" aria-label="Default select example" name="category" style="width: 32rem;">
       <option selected>類別</option>
-      <option value="fa-home">家居物業</option>
-      <option value="fa-shuttle-van">交通出行</option>
-      <option value="fa-grin-beam">休閒娛樂</option>
-      <option value="fa-utensils">餐飲食品</option>
-      <option value="fa-pen">其他</option>
+      <option {{#if fa_home }}selected{{/if}} value="fa-home">家居物業</option>
+      <option {{#if fa_shuttle_van }}selected{{/if}} value="fa-shuttle-van">交通出行</option>
+      <option {{#if fa_grin_beam }}selected{{/if}} value="fa-grin-beam">休閒娛樂</option>
+      <option {{#if fa_utensils }}selected{{/if}} value="fa-utensils">餐飲食品</option>
+      <option {{#if fa_pen }}selected{{/if}} value="fa-pen">其他</option>
     </select>
     <button type="submit" class="btn" style="width: 4rem; border: 1px solid #cecece;">選擇</button>
   </form>
