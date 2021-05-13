@@ -138,5 +138,5 @@ app.get('/category', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`app is listening on http://localhost:${port}`)
+  console.log(`App is on http://localhost:${port}`)
 })
