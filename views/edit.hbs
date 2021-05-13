@@ -25,12 +25,12 @@
       <label for="name" class="col-sm-2 col-form-label">類別 * :</label>
       <div class="col-sm-10">
         <select class="form-select" aria-label="Default select example" name="category">
-          <option>選擇</option>
-          <option value="fa-home">家居物業</option>
-          <option value="fa-shuttle-van">交通出行</option>
-          <option value="fa-grin-beam">休閒娛樂</option>
-          <option value="fa-utensils">餐飲食品</option>
-          <option value="fa-pen">其他</option>
+          <option>類別</option>
+          <option {{#if fa_home }}selected{{/if}} value="fa-home">家居物業</option>
+          <option {{#if fa_shuttle_van }}selected{{/if}} value="fa-shuttle-van">交通出行</option>
+          <option {{#if fa_grin_beam }}selected{{/if}} value="fa-grin-beam">休閒娛樂</option>
+          <option {{#if fa_utensils }}selected{{/if}} value="fa-utensils">餐飲食品</option>
+          <option {{#if fa_pen }}selected{{/if}} value="fa-pen">其他</option>
         </select>
       </div>
     </div>
@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-outline-secondary mt-4">新增支出</button>
+    <button type="submit" class="btn btn-outline-secondary mt-4">修改支出</button>
 
   </form>
 
