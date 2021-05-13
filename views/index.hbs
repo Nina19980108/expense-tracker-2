@@ -40,7 +40,7 @@
           <div>
             <a href="/edit/{{ this._id }}" style="color: rgb(96, 96, 96);" class="m-0 p-0"><i
                 class="far fa-edit"></i></a>
-            <form action="/delete/{{ this._id }}" method="post">
+            <form action="/{{ this._id }}?_method=DELETE" method="post">
               <button type="submit" class="btn m-0 p-0" style="color: rgb(96, 96, 96);"><i
                   class="far fa-trash-alt"></i></button>
             </form>

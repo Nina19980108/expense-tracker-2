@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars')
 const mongoose = require('mongoose')
 const Record = require('./models/record')
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 
 const port = 3000
 const app = express()
@@ -20,6 +21,7 @@ app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs' }))
 app.set('view engine', 'hbs')
 
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
   let totalAmount = 0
@@ -80,7 +82,7 @@ app.get('/edit/:id', (req, res) => {
     .catch(error => console.error(error))
 })
 
-app.post('/edit/:id', (req, res) => {
+app.put('/:id', (req, res) => {
   const id = req.params.id
   return Record.findById(id)
     .then(record => {
@@ -91,7 +93,7 @@ app.post('/edit/:id', (req, res) => {
     .catch(error => console.error(error))
 })
 
-app.post('/delete/:id', (req, res) => {
+app.delete('/:id', (req, res) => {
   const id = req.params.id
   return Record.findById(id)
     .then(record => record.remove())

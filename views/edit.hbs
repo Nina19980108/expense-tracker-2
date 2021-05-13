@@ -5,7 +5,7 @@
     <p class="col-sm-2 col-form-label fs-6 fw-lighter text-nowrap">* 必填欄位</p>
   </div>
 
-  <form action="/edit/{{ record._id }}" method="post" class="d-flex flex-column">
+  <form action="/{{ record._id }}?_method=PUT" method="post" class="d-flex flex-column">
 
     <div class="mb-3 row">
       <label for="name" class="col-sm-2 col-form-label">名稱 * :</label>
