@@ -1,24 +1,25 @@
 <div class="container mt-5 d-flex flex-column align-items-center" style="width: 30rem;">
 
   <form action="/new" method="get" class="mb-5">
-    <button class="btn btn-outline-secondary btn-lg" type="submit">新增支出</button>
+    <button class="btn btn-outline-secondary btn-lg" type="submit">Add Expenditure</button>
   </form>
 
-  <form action="/category" method="get" class="d-flex">
-    <select class="form-select" aria-label="Default select example" name="category" style="width: 32rem;">
-      <option selected>類別</option>
-      <option {{#if fa_home }}selected{{/if}} value="fa-home">家居物業</option>
-      <option {{#if fa_shuttle_van }}selected{{/if}} value="fa-shuttle-van">交通出行</option>
-      <option {{#if fa_grin_beam }}selected{{/if}} value="fa-grin-beam">休閒娛樂</option>
-      <option {{#if fa_utensils }}selected{{/if}} value="fa-utensils">餐飲食品</option>
-      <option {{#if fa_pen }}selected{{/if}} value="fa-pen">其他</option>
+  <form action="/category" method="get" class="d-flex" style="width: 25rem;">
+    <select class=" form-select" aria-label="Default select example" name="category"
+      style="width: 32rem;border: 1px solid #ffffff;">
+      <option selected>Category</option>
+      <option {{#if fa_home }}selected{{/if}} value="fa-home">Household</option>
+      <option {{#if fa_shuttle_van }}selected{{/if}} value="fa-shuttle-van">Trafic</option>
+      <option {{#if fa_grin_beam }}selected{{/if}} value="fa-grin-beam">Amusement</option>
+      <option {{#if fa_utensils }}selected{{/if}} value="fa-utensils">Food</option>
+      <option {{#if fa_pen }}selected{{/if}} value="fa-pen">Other</option>
     </select>
-    <button type="submit" class="btn" style="width: 4rem; border: 1px solid #cecece;">選擇</button>
+    <button type="submit" class="btn" style="width: 6rem; border: 1px solid #ffffff;">select</button>
   </form>
 
-  <div class="p-0 mt-5 d-flex justify-content-center">
-    <p class="me-2 mt-2">總金額：</p>
-    <p class="fs-1" id="totalAmount" style="color: rgb(220, 138, 75);">{{ totalAmount }}</p>
+  <div class="p-0 mt-5 d-flex flex-column align-items-center">
+    <p class="m-0 p-0">Total Amount：</p>
+    <p class="fs-1 m-0 p-0" id="totalAmount" style="color: rgb(220, 138, 75);">{{ totalAmount }}</p>
   </div>
 
   <div class="card mt-3" style="width: 25rem;">
@@ -37,9 +38,11 @@
         <div class="d-flex align-items-center">
           <p class="m-0 p-0 fs-5 fw-light pe-4">{{this.amount}}</p>
           <div>
-            <a href="/edit/{{ this._id }}" style="color: rgb(96, 96, 96);" class="m-0 p-0">修改</a>
+            <a href="/edit/{{ this._id }}" style="color: rgb(96, 96, 96);" class="m-0 p-0"><i
+                class="far fa-edit"></i></a>
             <form action="/delete/{{ this._id }}" method="post">
-              <button type="submit" class="btn m-0 p-0" style="color: rgb(96, 96, 96);">刪除</button>
+              <button type="submit" class="btn m-0 p-0" style="color: rgb(96, 96, 96);"><i
+                  class="far fa-trash-alt"></i></button>
             </form>
           </div>
         </div>
