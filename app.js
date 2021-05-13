@@ -23,20 +23,20 @@ app.set('view engine', 'hbs')
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-  // let totalAmount = 0
-  // Record.find()
-  //   .lean()
-  //   .then(record => {
-  //     record.forEach(record => {
-  //       totalAmount += record.amount
-  //     })
-  //   })
-  //   .catch(error => console.error(error))
+  let totalAmount = 0
+  Record.find()
+    .lean()
+    .then(record => {
+      record.forEach(record => {
+        totalAmount += record.amount
+      })
+    })
+    .catch(error => console.error(error))
 
   Record.find()
     .lean()
     .sort({ _id: 'asc' })
-    .then(record => res.render('index', { record }))
+    .then(record => res.render('index', { record, totalAmount }))
     .catch(error => console.error(error))
 })
 
