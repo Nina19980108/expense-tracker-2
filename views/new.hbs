@@ -10,22 +10,22 @@
     <div class="mb-3 row">
       <label for="name" class="col-sm-2 col-form-label">名稱 * :</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="name" name="name">
+        <input type="text" class="form-control" id="name" name="name" required>
       </div>
     </div>
 
     <div class="mb-3 row">
       <label for="name" class="col-sm-2 col-form-label">日期 * :</label>
       <div class="col-sm-10">
-        <input type="date" class="form-control" id="name" name="date">
+        <input type="date" class="form-control" id="name" name="date" required>
       </div>
     </div>
 
     <div class="mb-3 row">
       <label for="name" class="col-sm-2 col-form-label">類別 * :</label>
       <div class="col-sm-10">
-        <select class="form-select" aria-label="Default select example" name="category">
-          <option selected>選擇</option>
+        <select class="form-select" aria-label="Default select example" name="category" required>
+          <option selected value="">選擇</option>
           <option value="fa-home">家居物業</option>
           <option value="fa-shuttle-van">交通出行</option>
           <option value="fa-grin-beam">休閒娛樂</option>
@@ -38,7 +38,7 @@
     <div class="mb-3 row">
       <label for="name" class="col-sm-2 col-form-label">金額 * :</label>
       <div class="col-sm-10">
-        <input type="number" class="form-control" id="name" min="0" name="amount">
+        <input type="number" class="form-control" id="name" min="0" name="amount" required>
       </div>
     </div>
 
