@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const routes = require('./routes')
 
-const port = 3000
+const PORT = process.env.PORT || 3000
 const app = express()
 
 require('./config/mongoose')
@@ -16,6 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 app.use(routes)
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`App is on http://localhost:${port}`)
 })
