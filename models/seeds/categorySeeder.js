@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const db = require('../../config/mongoose')
 const Category = require('../category')
 
 const categories = [
@@ -11,13 +11,8 @@ const categories = [
   name: category[0],
   icon: category[1]
 }))
-mongoose.connect('mongodb://localhost/record', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
-db.on('error', () => {
-  console.log('mongodb error!')
-})
+
 db.once('open', () => {
-  console.log('mongodb connected!')
   Category.create(categories)
   console.log('Done!')
 })
