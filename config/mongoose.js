@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const MONGODB_URI = 'mongodb+srv://expense_tracker:expense_tracker@cluster0.20zai.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const MONGODB_URI = 'mongodb+srv://expense_tracker:aaa@cluster0.20zai.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const db = mongoose.connection
