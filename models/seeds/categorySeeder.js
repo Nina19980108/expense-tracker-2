@@ -14,5 +14,11 @@ const categories = [
 
 db.once('open', () => {
   Category.create(categories)
-  console.log('Done!')
+    .then(() => {
+      console.log('insert category done!')
+      return db.close()
+    })
+    .then(() => {
+      console.log('category datebase close!')
+    })
 })
