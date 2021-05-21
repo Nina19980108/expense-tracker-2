@@ -48,15 +48,19 @@ cd expense-tracker
 5. 匯入種子檔案
 
 ```
-執行 npm run seeds
+執行 npm run seed
 ```
 
-當 terminal 出現以下字樣，即表示種子資料已新增至資料庫，按下 ctrl + c 結束執行
+當 terminal 出現以下字樣，即表示種子資料已新增至資料庫。
 
 ```
-Mongodb is connected!
+mongodb connected!
+insert category done!
+category datebase close!
 
-Done!
+mongodb connected!
+insert expenses done!
+record datebase close!
 ```
 
 6. 啟動伺服器，執行 app.js 檔案
