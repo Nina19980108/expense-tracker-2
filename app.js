@@ -14,7 +14,7 @@ const usePassport = require('./config/passport')
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs' }))
 app.set('view engine', 'hbs')
 
-app.unsubscribe(session({
+app.use(session({
   secret: 'ThisIsMySecret',
   resave: false,
   saveUninitialized: true
