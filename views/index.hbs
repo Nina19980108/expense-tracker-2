@@ -4,6 +4,8 @@
     <button class="btn btn-outline-secondary btn-lg" type="submit">Add Expenditure</button>
   </form>
 
+  {{#if record}}
+
   <form action="/category/{{ userId }}" method="get" class="d-flex" style="width: 25rem;">
     <select class=" form-select" aria-label="Default select example" name="category"
       style="width: 32rem;border: 1px solid #ffffff;">
@@ -54,5 +56,9 @@
 
     </ul>
   </div>
+  {{else}}
+  <i class="fas fa-caret-up fs-3"></i>
+  <p class="fs-5">Start Using Your Expense Tracker!</p>
+  {{/if}}
 
 </div>
