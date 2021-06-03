@@ -4,8 +4,7 @@
     <button class="btn btn-outline-secondary btn-lg" type="submit">Add Expenditure</button>
   </form>
 
-  {{#if record}}
-
+  {{#if allRecord }}
   <form action="/category/{{ userId }}" method="get" class="d-flex" style="width: 25rem;">
     <select class=" form-select" aria-label="Default select example" name="category"
       style="width: 32rem;border: 1px solid #ffffff;">
@@ -23,7 +22,9 @@
     <p class="m-0 p-0">Total Amount：</p>
     <p class="fs-1 m-0 p-0" id="totalAmount" style="color: rgb(220, 138, 75);">{{ totalAmount }}</p>
   </div>
+  {{/if}}
 
+  {{#if record}}
   <div class="card mt-3" style="width: 25rem;">
     <ul class="list-group list-group-flush">
 
@@ -60,5 +61,4 @@
   <i class="fas fa-caret-up fs-3"></i>
   <p class="fs-5">Start Using Your Expense Tracker!</p>
   {{/if}}
-
 </div>

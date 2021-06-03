@@ -22,18 +22,6 @@ router.get('/', (req, res) => {
     .catch(error => console.error(error))
 })
 
-router.put('/:id', (req, res) => {
-  const _id = req.params.id
-  const userId = req.user._id
-  return Record.findOne({ _id, userId })
-    .then(record => {
-      record = Object.assign(record, req.body)
-      return record.save()
-    })
-    .then(() => res.redirect('/'))
-    .catch(error => console.error(error))
-})
-
 router.delete('/:id', (req, res) => {
   const _id = req.params.id
   const userId = req.user._id
@@ -70,7 +58,15 @@ router.get('/category/:id', (req, res) => {
 
   const query = new RegExp(category)
   let totalAmount = 0
+  let allRecord = 0
   const userId = req.params.id
+  Record.find({ userId })
+    .then(record => {
+      if (record) allRecord = 1
+      return
+    })
+    .catch(err => console.err(err))
+
   Record.find({ $or: [{ category: query }] })
     .find({ userId })
     .lean()
@@ -82,8 +78,9 @@ router.get('/category/:id', (req, res) => {
     .catch(error => console.error(error))
 
   return Record.find({ $or: [{ category: query }] })
+    .then({ userId })
     .lean()
-    .then(record => res.render('index', { record, userId, totalAmount, fa_home, fa_shuttle_van, fa_grin_beam, fa_utensils, fa_pen }))
+    .then(record => res.render('index', { record, allRecord, userId, totalAmount, fa_home, fa_shuttle_van, fa_grin_beam, fa_utensils, fa_pen }))
     .catch(error => console.error(error))
 })
 

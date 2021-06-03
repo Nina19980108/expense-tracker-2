@@ -34,4 +34,16 @@ router.get('/:id', (req, res) => {
     .catch(error => console.error(error))
 })
 
+router.put('/:id', (req, res) => {
+  const _id = req.params.id
+  const userId = req.user._id
+  return Record.findOne({ _id, userId })
+    .then(record => {
+      record = Object.assign(record, req.body)
+      return record.save()
+    })
+    .then(() => res.redirect('/'))
+    .catch(error => console.error(error))
+})
+
 module.exports = router
