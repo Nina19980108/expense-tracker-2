@@ -58,11 +58,11 @@ router.get('/category/:id', (req, res) => {
 
   const query = new RegExp(category)
   let totalAmount = 0
-  let allRecord = 0
+  let allRecord = false
   const userId = req.params.id
   Record.find({ userId })
     .then(record => {
-      if (record) allRecord = 1
+      if (record) allRecord = true
       return
     })
     .catch(err => console.err(err))
@@ -78,7 +78,7 @@ router.get('/category/:id', (req, res) => {
     .catch(error => console.error(error))
 
   return Record.find({ $or: [{ category: query }] })
-    .then({ userId })
+    .find({ userId })
     .lean()
     .then(record => res.render('index', { record, allRecord, userId, totalAmount, fa_home, fa_shuttle_van, fa_grin_beam, fa_utensils, fa_pen }))
     .catch(error => console.error(error))
