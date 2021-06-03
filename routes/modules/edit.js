@@ -1,4 +1,5 @@
 const express = require('express')
+const record = require('../../models/record')
 const router = express.Router()
 
 const Record = require('../../models/record')
