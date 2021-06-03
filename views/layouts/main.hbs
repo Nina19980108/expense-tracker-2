@@ -16,10 +16,19 @@
   style="font-family: 'Copperplate'; background-image:url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm218batch7-aum-21.jpg?w=1300&dpr=1&fit=default&crop=default&q=80&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=43a6001b0d2cc6767f11781ef571de55');background-repeat:no-repeat;background-color: #ffffff;background-size:cover;">
 
   <nav class="navbar navbar-light bg-light">
-    <div class="container d-flex justify-content-center">
+    <div class="container d-flex flex-column justify-content-center">
       <a class="navbar-brand ms-3 mt-3" href="/">
         <p class="fs-3">- Expense Tracker -</p>
       </a>
+      {{#if isAuthenticated }}
+      <a href="/users/logout">
+        <button type="button" class="btn btn-outline-secondary btn-sm py-0 px-4 mb-3">logout</button>
+      </a>
+      {{else}}
+      <a href="/users/login">
+        <button type="button" class="btn btn-outline-secondary btn-sm py-0 px-4 mb-3">login</button>
+      </a>
+      {{/if}}
     </div>
   </nav>
 
