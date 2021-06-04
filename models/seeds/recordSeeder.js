@@ -1,9 +1,7 @@
-const bcrypt = require('bcryptjs')
-require('dotenv')
-
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv')
 }
+const bcrypt = require('bcryptjs')
 const db = require('../../config/mongoose')
 const Record = require('../record')
 const User = require('../user')
