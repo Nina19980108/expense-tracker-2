@@ -2,10 +2,21 @@
 
 一個使用 Node.js + Express 打造的餐廳美食網站，並透過 mongodb 資料庫取得資料，可以在首頁看到所有的支出，還有支出的總和。
 可以選擇不同的類別，單讀只看一個類別的支出總和。可以編輯、新增、刪除支出。
+可以在註冊個人帳號後，依照信箱與密碼登入。
 
 ## 專案畫面
 
-![image](https://raw.githubusercontent.com/Nina19980108/expense-tracker/master/public/mainPage.png)
+#### 首頁
+
+![image](https://raw.githubusercontent.com/Nina19980108/expense-tracker/master/public/user_mainPage.png)
+
+#### 登入畫面
+
+![image](https://raw.githubusercontent.com/Nina19980108/expense-tracker/master/public/user_login.png)
+
+#### 新增頁面
+
+![image](https://raw.githubusercontent.com/Nina19980108/expense-tracker/master/public/user_newPage.png)
 
 ## Features - 產品功能
 
@@ -13,6 +24,8 @@
 2. 使用者可以新增一項支出。
 3. 使用者可以以不同的類別顯示支出總和。
 4. 使用者可以刪除一項支出。
+5. 使用者可以註冊個人帳號。
+6. 使用者可透過個人帳號登入，只能瀏覽自己的支出資訊。
 
 ## Environment SetUp - 環境建置
 
@@ -59,8 +72,7 @@ insert category done!
 category datebase close!
 
 mongodb connected!
-insert expenses done!
-record datebase close!
+Insert Records and User data done!
 ```
 
 6. 啟動伺服器，執行 app.js 檔案

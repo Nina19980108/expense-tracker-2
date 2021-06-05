@@ -54,7 +54,7 @@ db.once('open', () => {
       ))
     })
     .then(() => {
-      console.log('done.')
+      console.log('Insert Records and User data done!')
       process.exit()
     })
 })
