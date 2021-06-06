@@ -5,8 +5,8 @@
   </form>
 
 
-  <form action="/category/{{ userId }}" method="get" class="d-flex" style="width: 25rem;">
-    <select class=" form-select" aria-label="Default select example" name="category"
+  <form action="/selected/{{ userId }}" method="get" class="d-flex" style="width: 25rem;">
+    <select class=" form-select me-2" aria-label="Default select example" name="category"
       style="width: 32rem;border: 1px solid #ffffff;">
       <option selected>Category</option>
       <option {{#if fa_home }}selected{{/if}} value="fa-home">Household</option>
@@ -14,6 +14,24 @@
       <option {{#if fa_grin_beam }}selected{{/if}} value="fa-grin-beam">Amusement</option>
       <option {{#if fa_utensils }}selected{{/if}} value="fa-utensils">Food</option>
       <option {{#if fa_pen }}selected{{/if}} value="fa-pen">Other</option>
+    </select>
+
+    <select class=" form-select me-2" aria-label="Default select example" name="month"
+      style="width: 32rem;border: 1px solid #ffffff;">
+      <option selected>Month</option>
+      <option {{#if JAN }}selected{{/if}} value="01">JAN</option>
+      <option {{#if FEB }}selected{{/if}} value="02">FEB</option>
+      <option {{#if MAR }}selected{{/if}} value="03">MAR</option>
+      <option {{#if APR }}selected{{/if}} value="04">APR</option>
+      <option {{#if MAY }}selected{{/if}} value="05">MAY</option>
+      <option {{#if JUN }}selected{{/if}} value="06">JUN</option>
+      <option {{#if JUL }}selected{{/if}} value="07">JUL</option>
+      <option {{#if AUG }}selected{{/if}} value="08">AUG</option>
+      <option {{#if SEP }}selected{{/if}} value="09">SEP</option>
+      <option {{#if OCT }}selected{{/if}} value="10">OCT</option>
+      <option {{#if NOV }}selected{{/if}} value="11">NOV</option>
+      <option {{#if DEC }}selected{{/if}} value="12">DEC</option>
+
     </select>
     <button type="submit" class="btn" style="width: 6rem; border: 1px solid #ffffff;">select</button>
   </form>
