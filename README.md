@@ -8,7 +8,7 @@
 
 #### 首頁
 
-![image](https://raw.githubusercontent.com/Nina19980108/expense-tracker/master/public/user_mainPage.png)
+![image](https://github.com/Nina19980108/expense-tracker-2/blob/master/public/mainPage.png)
 
 #### 登入畫面
 
